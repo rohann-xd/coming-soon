@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  position: relative;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
+  filter: blur(20px); /* Apply blur to the background */
+  z-index: -1; /* Ensure the overlay is behind the content */
+}
+
+.content {
+  text-align: center;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 500px; /* Ensures the form content doesn't grow too wide on large screens */
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input[type="email"] {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+}
+
+footer strong {
+  font-weight: bold;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .content {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 28px; /* Adjust title size on smaller screens */
+  }
+
+  p {
+    font-size: 14px; /* Adjust description font size */
+  }
+
+  input[type="email"] {
+    font-size: 14px; /* Make input text smaller */
+  }
+
+  button {
+    font-size: 14px; /* Make button text smaller */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px; /* Smaller font size on mobile devices */
+  }
+
+  p {
+    font-size: 12px; /* Even smaller description */
+  }
+
+  .content {
+    padding: 15px;
+  }
+}
