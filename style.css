@@ -4,14 +4,15 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   font-family: Arial, sans-serif;
 }
 
 .container {
   position: relative;
-  background-image: url('background.jpg');
+  background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -23,7 +24,7 @@ body, html {
 }
 
 .container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -131,4 +132,77 @@ footer strong {
   .content {
     padding: 15px;
   }
+}
+
+/* Existing styles */
+
+.contact-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  text-decoration: underline;
+  font-size: 14px;
+  z-index: 2;
+}
+
+.contact-link:hover {
+  color: #007bff;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 2; /* Sits above the page content */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enables scrolling if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #f9f9f9;
+
+  margin: auto;
+  border-radius: 10px;
+  padding: 20px;
+  border: none;
+  width: 90%;
+  max-width: 500px; /* Centered content box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+h2 {
+  margin-top: 0;
+  color: #007bff;
+}
+.modal-content p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.modal-content p strong {
+  color: #333;
 }
